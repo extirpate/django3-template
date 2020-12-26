@@ -1,0 +1,29 @@
+// font mixin
+@mixin font($font-family, $font-name, $font-weight: normal) {
+    @font-face {
+      font-family: $font-family;
+      src: url("../fonts/"+$font-family+"/"+$font-name+".eot");
+      src: url("../fonts/"+$font-family+"/"+$font-name+".eot?#iefix")
+          format("embedded-opentype"),
+        url("../fonts/"+$font-family+"/"+$font-name+".woff") format("woff"),
+        url("../fonts/"+$font-family+"/"+$font-name+".ttf") format("truetype"),
+        url("../fonts/"+$font-family+"/"+$font-name+".svg#svgFontName")
+          format("svg");
+      font-weight: normal;
+      font-style: normal;
+      font-display: block;
+  
+      @if $font-weight == light {
+        font-weight: 300;
+      }
+  
+      @if $font-weight == medium {
+        font-weight: 500;
+      }
+  
+      @if $font-weight == bold {
+        font-weight: bold;
+      }
+    }
+  }
+  

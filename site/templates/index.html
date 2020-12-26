@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static%}
+
+{% block content %}
+<p>Hello, world!</p>
+<app-example-component></app-example-component>
+<form>
+    {% csrf_token %}
+</form>
+{%endblock%}
+
+{% block extra_js%}
+<script>
+(function(){
+    console.debug('extra js is running ...');    
+})();
+</script>
+{%endblock%}

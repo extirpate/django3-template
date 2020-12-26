@@ -1,0 +1,33 @@
+{%load static mix%}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="keywords" content="web, software, development, creative, experience, projects, mobile">
+    <meta name="description" content="Description of the website">
+    <meta name="robots" content="index, follow">
+
+    <title>My App</title>
+
+    <link rel="icon" type="image/png" href="{% static 'images/favicon.ico'%}">
+    <link href="{% mix 'css/app.css'%}" rel="stylesheet">
+
+    {%block extra_head%}
+    {%endblock%}
+  </head>
+	
+  <body>
+    <div id="app">
+    {% block content%}
+    {% endblock %}
+    </div>
+    
+    {% csrf_token %}
+    <script src="{% mix 'js/app.js'%}"></script>
+    {%block extra_js%}
+    {%endblock%}
+  </body>
+</html>
